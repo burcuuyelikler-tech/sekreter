@@ -5,7 +5,7 @@ const PHASES = [
     id: 1,
     name: "PO/BA + Terfi",
     period: "Şubat – Ekim 2026",
-    color: "#2d4a3e",
+    color: "#1a2f4a",
     milestones: [
       { id: "m1", text: "LinkedIn güncelle (Ampelmann + Headline + About)", done: false, week: "Bu Hafta" },
       { id: "m2", text: "PSM-I sınav tarihi ayarla (bedava hak)", done: false, week: "Bu Hafta" },
@@ -30,7 +30,7 @@ const PHASES = [
     id: 2,
     name: "SA Geçişi",
     period: "Haz 2026 – Haz 2027",
-    color: "#4a6f5c",
+    color: "#2e4a6e",
     milestones: [
       { id: "m18", text: "PL-600 çalışmaya başla", done: false, week: "Haziran 2026" },
       { id: "m19", text: "TOGAF Foundation kursuna başla", done: false, week: "Ekim 2026" },
@@ -46,7 +46,7 @@ const PHASES = [
     id: 3,
     name: "Otorite & Geçiş",
     period: "Haz 2027+",
-    color: "#2f5a47",
+    color: "#3d5a5f",
     milestones: [
       { id: "m26", text: "LinkedIn thought leadership serisi başlat", done: false, week: "2027" },
       { id: "m27", text: "Microsoft MVP başvurusu yap", done: false, week: "2027" },
@@ -315,16 +315,16 @@ export default function BurcuDashboard() {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "linear-gradient(135deg, #1a1612 0%, #2b2520 50%, #1f1b16 100%)",
+      background: "linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #0d1520 100%)",
       fontFamily: "'Cormorant Garamond', 'Playfair Display', 'Georgia', serif",
-      color: "#e8e3d8",
+      color: "#f5f1e8",
       padding: "0",
     }}>
       {/* Header */}
       <div style={{
-        background: "linear-gradient(90deg, #2d4a3e 0%, #1f3329 100%)",
+        background: "linear-gradient(90deg, #1a2f4a 0%, #0d1f35 100%)",
         padding: "24px 32px 20px",
-        borderBottom: "1px solid rgba(212,175,123,0.15)",
+        borderBottom: "1px solid rgba(212,175,123,0.2)",
         position: "sticky", top: 0, zIndex: 100,
         boxShadow: "0 2px 12px rgba(0,0,0,0.3)",
       }}>
@@ -335,18 +335,18 @@ export default function BurcuDashboard() {
                 Sekreter
               </div>
               <div style={{ fontSize: 22, fontWeight: 700, color: "#fff" }}>Burcu Gürel</div>
-              <div style={{ fontSize: 13, color: "#c4b5a0", marginTop: 2 }}>D365 & AI Transformation Specialist</div>
+              <div style={{ fontSize: 13, color: "#d4c4a8", marginTop: 2 }}>D365 & AI Transformation Specialist</div>
             </div>
             <div style={{
-              background: "rgba(228,220,200,0.08)",
+              background: "rgba(245,235,215,0.08)",
               borderRadius: 16,
               padding: "12px 20px",
               textAlign: "center",
-              border: "1px solid rgba(228,220,200,0.12)",
+              border: "1px solid rgba(245,235,215,0.12)",
             }}>
               <div style={{ fontSize: 11, color: "#d4af7b", letterSpacing: 2, textTransform: "uppercase" }}>🎯 Kritik Hedef</div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: "#8b4652", marginTop: 4 }}>31 Ekim 2026</div>
-              <div style={{ fontSize: 12, color: "#c4b5a0" }}>Tech Lead Terfisi</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: "#c9a961", marginTop: 4 }}>31 Ekim 2026</div>
+              <div style={{ fontSize: 12, color: "#d4c4a8" }}>Tech Lead Terfisi</div>
             </div>
           </div>
 
@@ -356,13 +356,13 @@ export default function BurcuDashboard() {
               <span style={{ fontSize: 12, color: "#d4af7b" }}>Genel İlerleme</span>
               <span style={{ fontSize: 12, color: "#fff", fontWeight: 600 }}>{doneMilestones}/{totalMilestones} milestone • {progressPct}%</span>
             </div>
-            <div style={{ background: "rgba(228,220,200,0.1)", borderRadius: 8, height: 8, overflow: "hidden" }}>
+            <div style={{ background: "rgba(245,235,215,0.1)", borderRadius: 8, height: 8, overflow: "hidden" }}>
               <div style={{
                 height: "100%", borderRadius: 8,
-                background: "linear-gradient(90deg, #4a6f5c, #2f5a47)",
+                background: "linear-gradient(90deg, #2e4a6e, #3d5a5f)",
                 width: `${progressPct}%`,
                 transition: "width 0.6s ease",
-                boxShadow: "0 0 12px rgba(74,111,92,0.6)",
+                boxShadow: "0 0 12px rgba(46,74,110,0.6)",
               }} />
             </div>
           </div>
@@ -376,9 +376,9 @@ export default function BurcuDashboard() {
             <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
               padding: "10px 20px", borderRadius: 10,
               border: "1px solid",
-              borderColor: activeTab === tab.id ? "#4a6f5c" : "rgba(228,220,200,0.1)",
-              background: activeTab === tab.id ? "rgba(74,111,92,0.2)" : "rgba(228,220,200,0.04)",
-              color: activeTab === tab.id ? "#d4af7b" : "#a89b88",
+              borderColor: activeTab === tab.id ? "#2e4a6e" : "rgba(245,235,215,0.1)",
+              background: activeTab === tab.id ? "rgba(46,74,110,0.2)" : "rgba(245,235,215,0.04)",
+              color: activeTab === tab.id ? "#d4af7b" : "#b8a890",
               fontSize: 13, fontWeight: 600, cursor: "pointer",
               transition: "all 0.2s", whiteSpace: "nowrap",
               display: "flex", alignItems: "center", gap: 6,
@@ -404,17 +404,17 @@ export default function BurcuDashboard() {
 
               {/* Today's One Thing - AUTOMATIC */}
               <div style={{
-                background: "linear-gradient(135deg, rgba(139,70,82,0.15), rgba(139,70,82,0.05))",
-                border: "1px solid rgba(139,70,82,0.3)",
+                background: "linear-gradient(135deg, rgba(201,169,97,0.15), rgba(201,169,97,0.05))",
+                border: "1px solid rgba(201,169,97,0.3)",
                 borderRadius: 16, padding: "20px 24px", marginBottom: 20,
               }}>
-                <div style={{ fontSize: 11, letterSpacing: 2, color: "#8b4652", textTransform: "uppercase", marginBottom: 8 }}>
+                <div style={{ fontSize: 11, letterSpacing: 2, color: "#c9a961", textTransform: "uppercase", marginBottom: 8 }}>
                   ⚡ Bugünün Tek Görevi
                 </div>
-                <div style={{ fontSize: 15, color: "#e8e3d8", lineHeight: 1.5, marginBottom: 8 }}>
+                <div style={{ fontSize: 15, color: "#f5f1e8", lineHeight: 1.5, marginBottom: 8 }}>
                   {TODAY_TASKS[0].text}
                 </div>
-                <div style={{ fontSize: 12, color: "#8b4652" }}>
+                <div style={{ fontSize: 12, color: "#c9a961" }}>
                   ⏱ {TODAY_TASKS[0].effort}
                 </div>
                 <div style={{ marginTop: 16 }}>
@@ -422,7 +422,7 @@ export default function BurcuDashboard() {
                     onClick={() => completeTask(TODAY_TASKS[0].id)}
                     disabled={completedToday.includes(TODAY_TASKS[0].id)}
                     style={{
-                      background: completedToday.includes(TODAY_TASKS[0].id) ? "#2f5a47" : "linear-gradient(135deg, #8b4652, #6d3640)",
+                      background: completedToday.includes(TODAY_TASKS[0].id) ? "#3d5a5f" : "linear-gradient(135deg, #c9a961, #b89850)",
                       border: "none", borderRadius: 10, padding: "12px 24px",
                       color: "#fff", fontSize: 14, fontWeight: 700, cursor: "pointer",
                       width: "100%", transition: "all 0.2s",
@@ -453,16 +453,16 @@ export default function BurcuDashboard() {
                     return (
                       <div key={task.id} style={{
                         display: "flex", alignItems: "center", gap: 16,
-                        background: done ? "rgba(47,90,71,0.15)" : "rgba(228,220,200,0.04)",
-                        border: `1px solid ${done ? "rgba(47,90,71,0.4)" : "rgba(228,220,200,0.08)"}`,
+                        background: done ? "rgba(61,90,95,0.15)" : "rgba(245,235,215,0.04)",
+                        border: `1px solid ${done ? "rgba(61,90,95,0.4)" : "rgba(245,235,215,0.08)"}`,
                         borderRadius: 12, padding: "14px 18px",
                       }}>
                         <button
                           onClick={() => completeTask(task.id)}
                           style={{
                             width: 28, height: 28, borderRadius: "50%",
-                            background: done ? "#2f5a47" : "rgba(228,220,200,0.08)",
-                            border: `2px solid ${done ? "#2f5a47" : "rgba(228,220,200,0.15)"}`,
+                            background: done ? "#3d5a5f" : "rgba(245,235,215,0.08)",
+                            border: `2px solid ${done ? "#3d5a5f" : "rgba(245,235,215,0.15)"}`,
                             display: "flex", alignItems: "center", justifyContent: "center",
                             cursor: "pointer", fontSize: 14, flexShrink: 0,
                             transition: "all 0.2s", color: "#fff",
@@ -470,7 +470,7 @@ export default function BurcuDashboard() {
                           {done ? "✓" : ""}
                         </button>
                         <div style={{ flex: 1 }}>
-                          <div style={{ fontSize: 14, color: done ? "#7a9982" : "#e8e3d8", textDecoration: done ? "line-through" : "none" }}>
+                          <div style={{ fontSize: 14, color: done ? "#7a9999" : "#f5f1e8", textDecoration: done ? "line-through" : "none" }}>
                             {task.text}
                           </div>
                           <div style={{ fontSize: 11, color: "#d4af7b", marginTop: 2 }}>⏱ {task.effort}</div>
@@ -484,11 +484,11 @@ export default function BurcuDashboard() {
               {/* Imposter antidote - STRONGER */}
               <div style={{
                 marginTop: 24,
-                background: "rgba(74,52,70,0.12)",
-                border: "1px solid rgba(74,52,70,0.25)",
+                background: "rgba(42,58,74,0.12)",
+                border: "1px solid rgba(42,58,74,0.25)",
                 borderRadius: 12, padding: "16px 20px",
               }}>
-                <div style={{ fontSize: 13, color: "#e8e3d8", lineHeight: 1.6, fontWeight: 600 }}>
+                <div style={{ fontSize: 13, color: "#f5f1e8", lineHeight: 1.6, fontWeight: 600 }}>
                   Karmaşıklığı görmek ve doğru soruyu sormak bir yetenek — hile değil. Bugün yaptığın şey tam olarak senior danışmanların yaptığı şey.
                 </div>
               </div>
@@ -499,14 +499,14 @@ export default function BurcuDashboard() {
           {activeTab === "copilot" && (
             <div style={{ paddingTop: 20 }}>
               <div style={{
-                background: "rgba(74,111,92,0.12)",
-                border: "1px solid rgba(74,111,92,0.3)",
+                background: "rgba(46,74,110,0.12)",
+                border: "1px solid rgba(46,74,110,0.3)",
                 borderRadius: 14, padding: "16px 20px", marginBottom: 24,
               }}>
                 <div style={{ fontSize: 11, letterSpacing: 2, color: "#d4af7b", textTransform: "uppercase", marginBottom: 6 }}>
                   🤖 Nasıl Kullanılır
                 </div>
-                <div style={{ fontSize: 13, color: "#c4b5a0", lineHeight: 1.6 }}>
+                <div style={{ fontSize: 13, color: "#d4c4a8", lineHeight: 1.6 }}>
                   Her prompt'un yanındaki <strong>"Kopyala"</strong> butonuna tıkla → Microsoft 365 Copilot'a yapıştır → Cevabı al → Gerekeni yap. Karar verme yok, sadece kopyala-yapıştır.
                 </div>
               </div>
@@ -518,32 +518,32 @@ export default function BurcuDashboard() {
                 return (
                 <div key={section.id} style={{ marginBottom: 28 }}>
                   <div style={{
-                    background: shouldHighlight ? "rgba(139,70,82,0.08)" : "rgba(228,220,200,0.04)",
-                    border: `1px solid ${shouldHighlight ? "rgba(139,70,82,0.4)" : "rgba(228,220,200,0.1)"}`,
+                    background: shouldHighlight ? "rgba(201,169,97,0.08)" : "rgba(245,235,215,0.04)",
+                    border: `1px solid ${shouldHighlight ? "rgba(201,169,97,0.4)" : "rgba(245,235,215,0.1)"}`,
                     borderRadius: 14, overflow: "hidden",
-                    boxShadow: shouldHighlight ? "0 0 20px rgba(139,70,82,0.3)" : "none",
+                    boxShadow: shouldHighlight ? "0 0 20px rgba(201,169,97,0.3)" : "none",
                     transition: "all 0.3s ease",
                   }}>
                     {/* Section Header */}
                     <div style={{
-                      background: shouldHighlight ? "rgba(139,70,82,0.2)" : "rgba(74,111,92,0.15)",
-                      borderBottom: `1px solid ${shouldHighlight ? "rgba(139,70,82,0.3)" : "rgba(74,111,92,0.2)"}`,
+                      background: shouldHighlight ? "rgba(201,169,97,0.2)" : "rgba(46,74,110,0.15)",
+                      borderBottom: `1px solid ${shouldHighlight ? "rgba(201,169,97,0.3)" : "rgba(46,74,110,0.2)"}`,
                       padding: "12px 20px",
                       display: "flex", justifyContent: "space-between", alignItems: "center",
                     }}>
                       <div>
-                        <div style={{ fontWeight: 700, fontSize: 15, color: "#e8e3d8" }}>
+                        <div style={{ fontWeight: 700, fontSize: 15, color: "#f5f1e8" }}>
                           {section.title}
                         </div>
-                        <div style={{ fontSize: 11, color: shouldHighlight ? "#8b4652" : "#d4af7b", marginTop: 2 }}>
+                        <div style={{ fontSize: 11, color: shouldHighlight ? "#c9a961" : "#d4af7b", marginTop: 2 }}>
                           {section.time}
                         </div>
                       </div>
                       {shouldHighlight && (
                         <div style={{
-                          background: "rgba(139,70,82,0.3)",
+                          background: "rgba(201,169,97,0.3)",
                           borderRadius: 20, padding: "4px 12px",
-                          fontSize: 11, fontWeight: 700, color: "#8b4652",
+                          fontSize: 11, fontWeight: 700, color: "#c9a961",
                         }}>
                           🔥 ŞİMDİ
                         </div>
@@ -562,22 +562,22 @@ export default function BurcuDashboard() {
                         
                         return (
                         <div key={idx} style={{
-                          background: weeklyHighlight ? "rgba(139,70,82,0.08)" : "rgba(255,255,255,0.03)",
-                          border: `1px solid ${weeklyHighlight ? "rgba(139,70,82,0.3)" : "rgba(228,220,200,0.08)"}`,
+                          background: weeklyHighlight ? "rgba(201,169,97,0.08)" : "rgba(255,255,255,0.03)",
+                          border: `1px solid ${weeklyHighlight ? "rgba(201,169,97,0.3)" : "rgba(245,235,215,0.08)"}`,
                           borderRadius: 12, padding: "14px 18px", marginBottom: 12,
-                          boxShadow: weeklyHighlight ? "0 0 12px rgba(139,70,82,0.2)" : "none",
+                          boxShadow: weeklyHighlight ? "0 0 12px rgba(201,169,97,0.2)" : "none",
                         }}>
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
                             <div style={{ flex: 1 }}>
                               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 2 }}>
-                                <div style={{ fontSize: 14, fontWeight: 600, color: "#e8e3d8" }}>
+                                <div style={{ fontSize: 14, fontWeight: 600, color: "#f5f1e8" }}>
                                   {p.label}
                                 </div>
                                 {weeklyHighlight && (
                                   <div style={{
-                                    background: "rgba(139,70,82,0.3)",
+                                    background: "rgba(201,169,97,0.3)",
                                     borderRadius: 12, padding: "2px 8px",
-                                    fontSize: 10, fontWeight: 700, color: "#8b4652",
+                                    fontSize: 10, fontWeight: 700, color: "#c9a961",
                                   }}>
                                     BUGÜN
                                   </div>
@@ -593,7 +593,7 @@ export default function BurcuDashboard() {
                                 alert("✅ Kopyalandı! Şimdi Copilot'a yapıştır.");
                               }}
                               style={{
-                                background: "linear-gradient(135deg, #4a6f5c, #2d4a3e)",
+                                background: "linear-gradient(135deg, #2e4a6e, #1a2f4a)",
                                 border: "none", borderRadius: 8, padding: "8px 16px",
                                 color: "#fff", fontSize: 12, fontWeight: 600, cursor: "pointer",
                                 whiteSpace: "nowrap", flexShrink: 0, marginLeft: 12,
@@ -604,7 +604,7 @@ export default function BurcuDashboard() {
                           <div style={{
                             background: "rgba(0,0,0,0.3)",
                             borderRadius: 8, padding: "12px 14px",
-                            fontSize: 12, color: "#d4c9b8",
+                            fontSize: 12, color: "#e8dcc8",
                             fontFamily: "'Courier New', monospace",
                             lineHeight: 1.6,
                             whiteSpace: "pre-wrap",
@@ -621,19 +621,19 @@ export default function BurcuDashboard() {
 
               {/* Capture Inbox */}
               <div style={{
-                background: "rgba(139,70,82,0.12)",
-                border: "1px solid rgba(139,70,82,0.25)",
+                background: "rgba(201,169,97,0.12)",
+                border: "1px solid rgba(201,169,97,0.25)",
                 borderRadius: 14, padding: "16px 20px", marginTop: 24,
               }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: "#8b4652", marginBottom: 8 }}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: "#c9a961", marginBottom: 8 }}>
                   💡 Copilot'tan Gelen Cevapları Buraya Yapıştır (opsiyonel)
                 </div>
                 <textarea
                   placeholder="Copilot cevaplarını buraya yapıştırabilirsin - böylece hepsini tek yerde görebilirsin. Ama zorunlu değil."
                   style={{
                     width: "100%", background: "rgba(0,0,0,0.2)",
-                    border: "1px solid rgba(139,70,82,0.3)", borderRadius: 10,
-                    padding: "12px 16px", color: "#e8e3d8", fontSize: 13,
+                    border: "1px solid rgba(201,169,97,0.3)", borderRadius: 10,
+                    padding: "12px 16px", color: "#f5f1e8", fontSize: 13,
                     resize: "vertical", minHeight: 100, outline: "none",
                     fontFamily: "inherit", lineHeight: 1.5,
                     boxSizing: "border-box",
@@ -664,7 +664,7 @@ export default function BurcuDashboard() {
                         borderBottom: `1px solid ${phase.color}33`,
                       }}>
                         <div>
-                          <div style={{ fontWeight: 700, fontSize: 15, color: "#e8e3d8" }}>
+                          <div style={{ fontWeight: 700, fontSize: 15, color: "#f5f1e8" }}>
                             Aşama {phase.id}: {phase.name}
                           </div>
                           <div style={{ fontSize: 12, color: "#d4af7b", marginTop: 2 }}>{phase.period}</div>
@@ -673,7 +673,7 @@ export default function BurcuDashboard() {
                           background: "rgba(0,0,0,0.3)",
                           borderRadius: 20, padding: "4px 14px",
                           fontSize: 13, fontWeight: 700,
-                          color: phasePct === 100 ? "#7a9982" : "#e8e3d8",
+                          color: phasePct === 100 ? "#7a9999" : "#f5f1e8",
                         }}>
                           {phaseDone}/{phase.milestones.length}
                         </div>
@@ -681,7 +681,7 @@ export default function BurcuDashboard() {
 
                       {/* Phase Progress */}
                       <div style={{ padding: "8px 20px 4px" }}>
-                        <div style={{ background: "rgba(228,220,200,0.08)", borderRadius: 4, height: 4 }}>
+                        <div style={{ background: "rgba(245,235,215,0.08)", borderRadius: 4, height: 4 }}>
                           <div style={{
                             height: "100%", borderRadius: 4,
                             background: phase.color, width: `${phasePct}%`,
@@ -698,13 +698,13 @@ export default function BurcuDashboard() {
                             style={{
                               display: "flex", alignItems: "flex-start", gap: 12,
                               padding: "8px 0",
-                              borderBottom: "1px solid rgba(228,220,200,0.04)",
+                              borderBottom: "1px solid rgba(245,235,215,0.04)",
                               cursor: "pointer",
                             }}>
                             <div style={{
                               width: 20, height: 20, borderRadius: 6, flexShrink: 0, marginTop: 1,
-                              background: m.done ? phase.color : "rgba(228,220,200,0.06)",
-                              border: `2px solid ${m.done ? phase.color : "rgba(228,220,200,0.15)"}`,
+                              background: m.done ? phase.color : "rgba(245,235,215,0.06)",
+                              border: `2px solid ${m.done ? phase.color : "rgba(245,235,215,0.15)"}`,
                               display: "flex", alignItems: "center", justifyContent: "center",
                               fontSize: 11, transition: "all 0.2s",
                             }}>
@@ -712,13 +712,13 @@ export default function BurcuDashboard() {
                             </div>
                             <div style={{ flex: 1 }}>
                               <div style={{
-                                fontSize: 13, color: m.done ? "#7a9982" : "#d4c9b8",
+                                fontSize: 13, color: m.done ? "#7a9999" : "#e8dcc8",
                                 textDecoration: m.done ? "line-through" : "none",
                                 lineHeight: 1.4,
                               }}>
                                 {m.text}
                               </div>
-                              <div style={{ fontSize: 11, color: "#6b5f50", marginTop: 2 }}>{m.week}</div>
+                              <div style={{ fontSize: 11, color: "#8a7860", marginTop: 2 }}>{m.week}</div>
                             </div>
                           </div>
                         ))}
@@ -734,20 +734,20 @@ export default function BurcuDashboard() {
           {activeTab === "weekly" && (
             <div style={{ paddingTop: 20 }}>
               <div style={{
-                background: "rgba(228,220,200,0.04)", border: "1px solid rgba(228,220,200,0.08)",
+                background: "rgba(245,235,215,0.04)", border: "1px solid rgba(245,235,215,0.08)",
                 borderRadius: 14, padding: "20px 24px", marginBottom: 20,
               }}>
                 <div style={{ fontSize: 11, letterSpacing: 2, color: "#d4af7b", textTransform: "uppercase", marginBottom: 4 }}>
                   📋 Haftalık Check-in
                 </div>
-                <div style={{ fontSize: 13, color: "#a89b88" }}>
+                <div style={{ fontSize: 13, color: "#b8a890" }}>
                   Her Pazartesi 10 dakika. Remarkable'da veya burada.
                 </div>
               </div>
 
               {WEEKLY_QUESTIONS.map((q, idx) => (
                 <div key={idx} style={{ marginBottom: 16 }}>
-                  <div style={{ fontSize: 13, color: "#c4b5a0", marginBottom: 8, fontWeight: 600 }}>
+                  <div style={{ fontSize: 13, color: "#d4c4a8", marginBottom: 8, fontWeight: 600 }}>
                     {idx + 1}. {q}
                   </div>
                   <textarea
@@ -755,9 +755,9 @@ export default function BurcuDashboard() {
                     onChange={e => setWeeklyAnswers(prev => ({ ...prev, [idx]: e.target.value }))}
                     placeholder="Yaz..."
                     style={{
-                      width: "100%", background: "rgba(228,220,200,0.04)",
-                      border: "1px solid rgba(228,220,200,0.1)", borderRadius: 10,
-                      padding: "12px 16px", color: "#e8e3d8", fontSize: 13,
+                      width: "100%", background: "rgba(245,235,215,0.04)",
+                      border: "1px solid rgba(245,235,215,0.1)", borderRadius: 10,
+                      padding: "12px 16px", color: "#f5f1e8", fontSize: 13,
                       resize: "vertical", minHeight: 72, outline: "none",
                       fontFamily: "inherit", lineHeight: 1.5,
                       boxSizing: "border-box",
@@ -768,11 +768,11 @@ export default function BurcuDashboard() {
 
               <div style={{
                 marginTop: 8,
-                background: "rgba(139,70,82,0.08)",
-                border: "1px solid rgba(139,70,82,0.2)",
+                background: "rgba(201,169,97,0.08)",
+                border: "1px solid rgba(201,169,97,0.2)",
                 borderRadius: 12, padding: "14px 18px",
               }}>
-                <div style={{ fontSize: 12, color: "#8b4652", fontWeight: 600, marginBottom: 4 }}>
+                <div style={{ fontSize: 12, color: "#c9a961", fontWeight: 600, marginBottom: 4 }}>
                   🎯 Gelecek Haftanın Tek Görevi
                 </div>
                 <input
@@ -781,8 +781,8 @@ export default function BurcuDashboard() {
                   placeholder="Bu haftaki check-in'den çıkan en kritik aksiyon..."
                   style={{
                     width: "100%", background: "transparent",
-                    border: "none", borderBottom: "1px solid rgba(139,70,82,0.3)",
-                    padding: "8px 0", color: "#e8e3d8", fontSize: 14,
+                    border: "none", borderBottom: "1px solid rgba(201,169,97,0.3)",
+                    padding: "8px 0", color: "#f5f1e8", fontSize: 14,
                     outline: "none", fontFamily: "inherit",
                     boxSizing: "border-box",
                   }}
@@ -795,11 +795,11 @@ export default function BurcuDashboard() {
           {activeTab === "evidence" && (
             <div style={{ paddingTop: 20 }}>
               <div style={{
-                background: "rgba(74,52,70,0.12)",
-                border: "1px solid rgba(74,52,70,0.25)",
+                background: "rgba(42,58,74,0.12)",
+                border: "1px solid rgba(42,58,74,0.25)",
                 borderRadius: 14, padding: "16px 20px", marginBottom: 20,
               }}>
-                <div style={{ fontSize: 11, letterSpacing: 2, color: "#9a8a7f", textTransform: "uppercase", marginBottom: 6 }}>
+                <div style={{ fontSize: 11, letterSpacing: 2, color: "#9aa0a8", textTransform: "uppercase", marginBottom: 6 }}>
                   💜 Kanıt Biriktirme
                 </div>
                 <div style={{ fontSize: 13, color: "#c8b8dc", lineHeight: 1.6 }}>
@@ -809,8 +809,8 @@ export default function BurcuDashboard() {
 
               {/* Add evidence */}
               <div style={{
-                background: "rgba(228,220,200,0.04)",
-                border: "1px solid rgba(228,220,200,0.1)",
+                background: "rgba(245,235,215,0.04)",
+                border: "1px solid rgba(245,235,215,0.1)",
                 borderRadius: 14, padding: "16px 20px", marginBottom: 20,
               }}>
                 <div style={{ fontSize: 12, color: "#d4af7b", marginBottom: 12, fontWeight: 600 }}>
@@ -821,9 +821,9 @@ export default function BurcuDashboard() {
                   onChange={e => setNewEvidence(p => ({ ...p, date: e.target.value }))}
                   placeholder="Tarih (örn: Mart 2026)"
                   style={{
-                    width: "100%", background: "rgba(228,220,200,0.06)",
-                    border: "1px solid rgba(228,220,200,0.1)", borderRadius: 8,
-                    padding: "10px 14px", color: "#e8e3d8", fontSize: 13,
+                    width: "100%", background: "rgba(245,235,215,0.06)",
+                    border: "1px solid rgba(245,235,215,0.1)", borderRadius: 8,
+                    padding: "10px 14px", color: "#f5f1e8", fontSize: 13,
                     outline: "none", marginBottom: 10, fontFamily: "inherit",
                     boxSizing: "border-box",
                   }}
@@ -833,9 +833,9 @@ export default function BurcuDashboard() {
                   onChange={e => setNewEvidence(p => ({ ...p, achievement: e.target.value }))}
                   placeholder="Ne yaptım? (örn: DevOps backlog 120 → 30 item'a düşürüldü)"
                   style={{
-                    width: "100%", background: "rgba(228,220,200,0.06)",
-                    border: "1px solid rgba(228,220,200,0.1)", borderRadius: 8,
-                    padding: "10px 14px", color: "#e8e3d8", fontSize: 13,
+                    width: "100%", background: "rgba(245,235,215,0.06)",
+                    border: "1px solid rgba(245,235,215,0.1)", borderRadius: 8,
+                    padding: "10px 14px", color: "#f5f1e8", fontSize: 13,
                     outline: "none", marginBottom: 10, fontFamily: "inherit",
                     boxSizing: "border-box",
                   }}
@@ -845,15 +845,15 @@ export default function BurcuDashboard() {
                   onChange={e => setNewEvidence(p => ({ ...p, impact: e.target.value }))}
                   placeholder="Etkisi ne oldu? (sayısal veya gözlemsel)"
                   style={{
-                    width: "100%", background: "rgba(228,220,200,0.06)",
-                    border: "1px solid rgba(228,220,200,0.1)", borderRadius: 8,
-                    padding: "10px 14px", color: "#e8e3d8", fontSize: 13,
+                    width: "100%", background: "rgba(245,235,215,0.06)",
+                    border: "1px solid rgba(245,235,215,0.1)", borderRadius: 8,
+                    padding: "10px 14px", color: "#f5f1e8", fontSize: 13,
                     outline: "none", marginBottom: 14, fontFamily: "inherit",
                     boxSizing: "border-box",
                   }}
                 />
                 <button onClick={addEvidence} style={{
-                  background: "linear-gradient(135deg, #4a3446, #8e44ad)",
+                  background: "linear-gradient(135deg, #2a3a4a, #8e44ad)",
                   border: "none", borderRadius: 8, padding: "10px 24px",
                   color: "#fff", fontSize: 13, fontWeight: 600, cursor: "pointer",
                 }}>
@@ -864,12 +864,12 @@ export default function BurcuDashboard() {
               {/* Evidence list */}
               {evidenceLog.map((e, idx) => (
                 <div key={idx} style={{
-                  background: "rgba(74,52,70,0.08)",
-                  border: "1px solid rgba(74,52,70,0.2)",
+                  background: "rgba(42,58,74,0.08)",
+                  border: "1px solid rgba(42,58,74,0.2)",
                   borderRadius: 12, padding: "14px 18px", marginBottom: 12,
                 }}>
-                  <div style={{ fontSize: 11, color: "#9a8a7f", marginBottom: 4 }}>{e.date}</div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: "#e8e3d8", marginBottom: 4 }}>{e.achievement}</div>
+                  <div style={{ fontSize: 11, color: "#9aa0a8", marginBottom: 4 }}>{e.date}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: "#f5f1e8", marginBottom: 4 }}>{e.achievement}</div>
                   {e.impact && <div style={{ fontSize: 12, color: "#c8b8dc" }}>→ {e.impact}</div>}
                 </div>
               ))}
