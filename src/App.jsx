@@ -235,14 +235,47 @@ export default function BurcuDashboard() {
     } catch { return PHASES; }
   });
   const [todayTask, setTodayTask] = useState(null);
-  const [weeklyAnswers, setWeeklyAnswers] = useState({});
-  const [evidenceLog, setEvidenceLog] = useState(EVIDENCE_LOG_INITIAL);
+  const [weeklyAnswers, setWeeklyAnswers] = useState(() => {
+    try {
+      const saved = localStorage.getItem("burcu_weekly");
+      return saved ? JSON.parse(saved) : {};
+    } catch { return {}; }
+  });
+  const [evidenceLog, setEvidenceLog] = useState(() => {
+    try {
+      const saved = localStorage.getItem("burcu_evidence");
+      return saved ? JSON.parse(saved) : EVIDENCE_LOG_INITIAL;
+    } catch { return EVIDENCE_LOG_INITIAL; }
+  });
   const [newEvidence, setNewEvidence] = useState({ date: "", achievement: "", impact: "" });
   const [showConfetti, setShowConfetti] = useState(false);
-  const [completedToday, setCompletedToday] = useState([]);
+  const [completedToday, setCompletedToday] = useState(() => {
+    try {
+      const saved = localStorage.getItem("burcu_completed");
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
   const [currentTime, setCurrentTime] = useState(new Date());
 
   // Update time every minute
+  useEffect(() => {
+    try {
+      localStorage.setItem("burcu_weekly", JSON.stringify(weeklyAnswers));
+    } catch {}
+  }, [weeklyAnswers]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("burcu_evidence", JSON.stringify(evidenceLog));
+    } catch {}
+  }, [evidenceLog]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("burcu_completed", JSON.stringify(completedToday));
+    } catch {}
+  }, [completedToday]);
+
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 60000);
     return () => clearInterval(timer);
