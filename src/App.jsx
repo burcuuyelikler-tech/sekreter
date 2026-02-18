@@ -357,22 +357,6 @@ export default function BurcuDashboard() {
     { id: "evidence", label: "Kanıtlar", emoji: "🏆" },
   ];
 
-  if (loading) {
-    return (
-      <div style={{
-        minHeight: "100vh",
-        background: "linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #0d1520 100%)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "#d4af7b",
-        fontSize: 18,
-        fontFamily: "'Cormorant Garamond', serif",
-      }}>
-        ⚡ Veriler yükleniyor...
-      </div>
-    );
-  }
 
   return (
     <div style={{
