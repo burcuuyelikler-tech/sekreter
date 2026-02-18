@@ -258,7 +258,7 @@ export default function BurcuDashboard() {
     } catch { return []; }
   });
   const [currentTime, setCurrentTime] = useState(new Date());
-
+  const [loading, setLoading] = useState(false);
   // Update time every minute
   useEffect(() => {
     try {
