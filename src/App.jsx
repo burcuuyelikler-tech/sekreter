@@ -69,11 +69,11 @@ const PHASES = [
 ];
 
 const TODAY_TASKS = [
-  { id: "t1", text: "LinkedIn'i aç, Ampelmann'ı ekle", effort: "15 dk", phase: 1 },
-  { id: "t2", text: "PSM-I için Scrum.org'a git, sınav tarihine bak", effort: "10 dk", phase: 1 },
-  { id: "t3", text: "Platform Roadmap için bir A4 kağıt al ve mind map çiz", effort: "20 dk", phase: 1 },
-  { id: "t4", text: "Key user listesi için taslak Excel oluştur", effort: "15 dk", phase: 1 },
-  { id: "t5", text: "DevOps board'una gir, item sayısını not et", effort: "5 dk", phase: 1 },
+  { id: "t1", text: "LinkedIn'i aç, Ampelmann'ı ekle", effort: "15 dk", phase: 1, milestoneId: "m1" },
+  { id: "t2", text: "PSM-I için Scrum.org'a git, sınav tarihine bak", effort: "10 dk", phase: 1, milestoneId: "m2" },
+  { id: "t3", text: "Platform Roadmap için bir A4 kağıt al ve mind map çiz", effort: "20 dk", phase: 1, milestoneId: "m3" },
+  { id: "t4", text: "Key user listesi için taslak Excel oluştur", effort: "15 dk", phase: 1, milestoneId: "m4" },
+  { id: "t5", text: "DevOps board'una gir, item sayısını not et", effort: "5 dk", phase: 1, milestoneId: "m5" },
 ];
 
 const WEEKLY_QUESTIONS = [
@@ -372,9 +372,26 @@ export default function BurcuDashboard() {
         setShowConfetti(false);
         setShowCompletionMessage(false);
         setJustCompleted(null);
+
+        // Save completed task
         await supabase
           .from("completed_tasks")
           .upsert({ task_id: taskId, completed_at: new Date().toISOString() });
+
+        // Auto-complete linked milestone
+        if (task.milestoneId) {
+          setMilestones(prev => prev.map(phase =>
+            phase.id === task.phase ? {
+              ...phase,
+              milestones: phase.milestones.map(m =>
+                m.id === task.milestoneId ? { ...m, done: true } : m
+              )
+            } : phase
+          ));
+          await supabase
+            .from("milestones")
+            .upsert({ id: task.milestoneId, phase_id: task.phase, done: true, updated_at: new Date().toISOString() });
+        }
       }, 2000);
     }
   };
